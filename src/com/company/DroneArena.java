@@ -16,19 +16,23 @@ public class DroneArena {
         this.totAreaX = a;
         this.totAreaY = b;
     }
-    int getDronesCount(){
-      return drones.size();
+
+    int getDronesCount() {
+        return drones.size();
     }
-    int maxPossibleDrones(){
-        return (this.totAreaX - 2) * (this.totAreaY -2);
+
+    int maxPossibleDrones() {
+        return (this.totAreaX - 2) * (this.totAreaY - 2);
     }
-boolean canAddDrone(){
+
+    boolean canAddDrone() {
         if (getDronesCount() < maxPossibleDrones()) {
             return true;
-    }else{
+        } else {
             return false;
         }
-}
+    }
+
     public static void main(String[] args) {
 
         DroneArena a = new DroneArena(200, 100);    // create drone arena
@@ -58,39 +62,38 @@ boolean canAddDrone(){
         return null;
     }
 
-        public void addDrone() {
+    public void addDrone() {
 
-            int run = 1;
-            while(run == 1){
-                Random r1 = new Random();
+        int run = 1;
+        while (run == 1) {
+            Random r1 = new Random();
 
-                int x = r1.nextInt(this.totAreaX - 1);
-                int y = r1.nextInt(this.totAreaY - 1);
-                if (getDroneAt(x, y) == null) {
-                    addDrone(x, y);
-                    run = 0; //break
-                }
-                else {
-                    System.out.println("drone is already here try again");
+            int x = r1.nextInt(this.totAreaX - 1);
+            int y = r1.nextInt(this.totAreaY - 1);
+            if (getDroneAt(x, y) == null) {
+                addDrone(x, y);
+                run = 0; //break
+            } else {
+                System.out.println("drone is already here try again");
 
-                    if(canAddDrone() == false){
-                        run = 0;
-                        System.out.println("You have reached maximum drone capacity of " + maxPossibleDrones());
-                    }
+                if (canAddDrone() == false) {
+                    run = 0;
+                    System.out.println("You have reached maximum drone capacity of " + maxPossibleDrones());
                 }
             }
-
         }
 
-
-        public String toString() {
-            String s = "drones\n";
-            for (Drone d : drones) {
-                s += d.toString();
-                s += "\n";
-            }
-
-            return s;
-
-        }
     }
+
+
+    public String toString() {
+        String s = "drones\n";
+        for (Drone d : drones) {
+            s += d.toString();
+            s += "\n";
+        }
+
+        return s;
+
+    }
+}

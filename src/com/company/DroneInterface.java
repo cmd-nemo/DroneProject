@@ -1,23 +1,25 @@
 package com.company;
+
 import java.util.Scanner;
 
 /**
  * Simple program to show arena with multiple drones
- * @author shsmchlr
  *
+ * @author shsmchlr
  */
 public class DroneInterface {
 
-    private Scanner s;								// scanner used for input from user
-    private DroneArena myArena;				// arena in which drones are shown
+    private Scanner s;                                // scanner used for input from user
+    private DroneArena myArena;                // arena in which drones are shown
+
     /**
      * constructor for DroneInterface
      * sets up scanner used for input and the arena
      * then has main loop allowing user to enter commands
      */
     public DroneInterface() {
-        s = new Scanner(System.in);			// set up scanner for user input
-        myArena = new DroneArena(20, 6);	// create arena of size 20*6
+        s = new Scanner(System.in);            // set up scanner for user input
+        myArena = new DroneArena(20, 6);    // create arena of size 20*6
 
         char ch = ' ';
         do {
@@ -25,20 +27,21 @@ public class DroneInterface {
             ch = s.next().charAt(0);
             s.nextLine();
             switch (ch) {
-                case 'A' :
-                case 'a' :
-                    myArena.addDrone();	// add a new drone to arena
+                case 'A':
+                case 'a':
+                    myArena.addDrone();    // add a new drone to arena
                     break;
-                case 'I' :
-                case 'i' :
+                case 'I':
+                case 'i':
                     System.out.print(myArena.toString());
                     break;
-                case 'x' : 	ch = 'X';				// when X detected program ends
+                case 'x':
+                    ch = 'X';                // when X detected program ends
                     break;
             }
-        } while (ch != 'X');						// test if end
+        } while (ch != 'X');                        // test if end
 
-        s.close();									// close scanner
+        s.close();                                    // close scanner
     }
 
     public static void main(String[] args) {
