@@ -10,7 +10,14 @@ public class ConsoleCanvas {
         this.xPos1 = x + 2;
         this.yPos1 = y + 2;
 
-        Canvas = new char [x + 2][y + 2]
+        Canvas = new char [x + 2][y + 2];
+
+        for(int i ==0, i< this.xPos1, i++){
+            for(int j ==0 j<this.yPos1, j++){
+                if()
+            }
+
+        }
 
     }
 
