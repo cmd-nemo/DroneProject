@@ -42,7 +42,8 @@ public class DroneInterface {
     }
 
     public static void main(String[] args) {
-        DroneInterface r = new DroneInterface();	// just call the interface
+        DroneInterface r = new DroneInterface();
+        // just call the interface
     }
 
 }
